@@ -51,7 +51,7 @@ const InputStudent = ({setStudentData, onClose}: Props) => {
                         name="studentName"
                         id="studentName"
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Ex: John Doe"
+                        placeholder="Student Name"
                         required
                     />
                 </div>
@@ -63,7 +63,7 @@ const InputStudent = ({setStudentData, onClose}: Props) => {
                     </label>
                     <input name="studentAge" type="number" id="studentAge"
                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                           placeholder="Ex: 20" required/>
+                           placeholder="Age" required/>
                 </div>
 
                 <div>
@@ -73,7 +73,7 @@ const InputStudent = ({setStudentData, onClose}: Props) => {
                     </label>
                     <input name="studentDOB" type="date" id="studentDOB"
                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                           placeholder="Ex: 20.20.20" required/>
+                           placeholder="Date of Birth" required/>
 
                 </div>
 
@@ -85,7 +85,7 @@ const InputStudent = ({setStudentData, onClose}: Props) => {
 
                     <input name="studentClass" type="text" id="studentClass"
                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                           placeholder="Ex: 20" required/>
+                           placeholder="Class" required/>
                 </div>
 
                 <div>
@@ -95,7 +95,7 @@ const InputStudent = ({setStudentData, onClose}: Props) => {
                     </label>
                     <input name="fatherName" type="text" id="fatherName"
                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                           placeholder="Ex: 20" required/>
+                           placeholder="Father’s Name" required/>
 
                 </div>
 
@@ -106,7 +106,7 @@ const InputStudent = ({setStudentData, onClose}: Props) => {
                     </label>
                     <input name="homeAddress" type="text" id="homeAddress"
                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                           placeholder="Ex: 20" required/>
+                           placeholder="Home Address" required/>
 
                 </div>
 
@@ -118,7 +118,7 @@ const InputStudent = ({setStudentData, onClose}: Props) => {
                     </label>
                     <input name="phoneNumber" type="number" id="phoneNumber"
                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                           placeholder="Ex: 20" required/>
+                           placeholder="Contact Details" required/>
 
                 </div>
 
@@ -129,7 +129,7 @@ const InputStudent = ({setStudentData, onClose}: Props) => {
                     </label>
                     <input name="dateOfAdmission" type="date" id="dateOfAdmission"
                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                           placeholder="Ex: 20" required/>
+                           placeholder="Date of Admission" required/>
 
                 </div>
 

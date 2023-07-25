@@ -1,5 +1,3 @@
-// StudentTable.tsx
-
 import React from "react";
 import {MdWarningAmber} from "react-icons/md";
 import {PDFDownloadLink} from "@react-pdf/renderer";

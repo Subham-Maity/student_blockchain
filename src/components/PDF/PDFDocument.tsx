@@ -25,19 +25,42 @@ const styles = StyleSheet.create({
     heading: {
         fontSize: 24,
         marginBottom: 20,
+        textAlign: "center",
+        textDecoration: "underline",
+    },
+    table: {
+        display: "flex",
+        width: "100%",
+        borderStyle: "solid",
+        borderWidth: 1,
+        borderColor: "#000000",
+        marginBottom: 10,
+    },
+    tableRow: {
+        flexDirection: "row",
+    },
+    tableCellHeader: {
+        fontSize: 12,
+        padding: 8,
+        backgroundColor: "#f0f0f0",
+        textAlign: "center",
+        borderWidth: 1,
+        borderColor: "#000000",
+    },
+    tableCellData: {
+        fontSize: 12,
+        padding: 8,
+        textAlign: "center",
+        borderWidth: 1,
+        borderColor: "#000000",
+    },
+    // Add missing styles for column and row
+    column: {
+        flex: 1,
     },
     row: {
         flexDirection: "row",
         marginBottom: 5,
-    },
-    column: {
-        flex: 1,
-    },
-    cell: {
-        fontSize: 12,
-        padding: 5,
-        borderColor: "#000000",
-        borderWidth: 6,
     },
 });
 
@@ -46,61 +69,63 @@ const PDFDocument: React.FC<PDFDocumentProps> = ({ studentData }) => {
         <Document>
             <Page size="A4" style={styles.page}>
                 <Text style={styles.heading}>Student Details</Text>
-                <View style={styles.row}>
-                    <View style={styles.column}>
-                        <Text style={styles.cell}>Student Name</Text>
+                <View style={styles.table}>
+                    {/* Table Header */}
+                    <View style={styles.tableRow}>
+                        <View style={styles.column}>
+                            <Text style={styles.tableCellHeader}>Student Name</Text>
+                        </View>
+                        <View style={styles.column}>
+                            <Text style={styles.tableCellHeader}>Age</Text>
+                        </View>
+                        <View style={styles.column}>
+                            <Text style={styles.tableCellHeader}>Date of Birth</Text>
+                        </View>
+                        <View style={styles.column}>
+                            <Text style={styles.tableCellHeader}>Class</Text>
+                        </View>
+                        <View style={styles.column}>
+                            <Text style={styles.tableCellHeader}>Fathers Name</Text>
+                        </View>
+                        <View style={styles.column}>
+                            <Text style={styles.tableCellHeader}>Home Address</Text>
+                        </View>
+                        <View style={styles.column}>
+                            <Text style={styles.tableCellHeader}>Phone Number</Text>
+                        </View>
+                        <View style={styles.column}>
+                            <Text style={styles.tableCellHeader}>Date of Admission</Text>
+                        </View>
                     </View>
-                    <View style={styles.column}>
-                        <Text style={styles.cell}>Age</Text>
-                    </View>
-                    <View style={styles.column}>
-                        <Text style={styles.cell}>Date of Birth</Text>
-                    </View>
-                    <View style={styles.column}>
-                        <Text style={styles.cell}>Class</Text>
-                    </View>
-                    <View style={styles.column}>
-                        <Text style={styles.cell}>Fathers Name</Text>
-                    </View>
-                    <View style={styles.column}>
-                        <Text style={styles.cell}>Home Address</Text>
-                    </View>
-                    <View style={styles.column}>
-                        <Text style={styles.cell}>Phone Number</Text>
-                    </View>
-                    <View style={styles.column}>
-                        <Text style={styles.cell}>Date of Admission</Text>
+
+                    {/* Table Data */}
+                    <View style={styles.tableRow}>
+                        <View style={styles.column}>
+                            <Text style={styles.tableCellData}>{studentData.studentName}</Text>
+                        </View>
+                        <View style={styles.column}>
+                            <Text style={styles.tableCellData}>{studentData.studentAge}</Text>
+                        </View>
+                        <View style={styles.column}>
+                            <Text style={styles.tableCellData}>{studentData.studentDOB}</Text>
+                        </View>
+                        <View style={styles.column}>
+                            <Text style={styles.tableCellData}>{studentData.studentClass}</Text>
+                        </View>
+                        <View style={styles.column}>
+                            <Text style={styles.tableCellData}>{studentData.fatherName}</Text>
+                        </View>
+                        <View style={styles.column}>
+                            <Text style={styles.tableCellData}>{studentData.homeAddress}</Text>
+                        </View>
+                        <View style={styles.column}>
+                            <Text style={styles.tableCellData}>{studentData.phoneNumber}</Text>
+                        </View>
+                        <View style={styles.column}>
+                            <Text style={styles.tableCellData}>{studentData.dateOfAdmission}</Text>
+                        </View>
                     </View>
                 </View>
-
-                {/* Render only one row with the student data */}
-                <View style={styles.row}>
-                    <View style={styles.column}>
-                        <Text style={styles.cell}>{studentData.studentName}</Text>
-                    </View>
-                    <View style={styles.column}>
-                        <Text style={styles.cell}>{studentData.studentAge}</Text>
-                    </View>
-                    <View style={styles.column}>
-                        <Text style={styles.cell}>{studentData.studentDOB}</Text>
-                    </View>
-                    <View style={styles.column}>
-                        <Text style={styles.cell}>{studentData.studentClass}</Text>
-                    </View>
-                    <View style={styles.column}>
-                        <Text style={styles.cell}>{studentData.fatherName}</Text>
-                    </View>
-                    <View style={styles.column}>
-                        <Text style={styles.cell}>{studentData.homeAddress}</Text>
-                    </View>
-                    <View style={styles.column}>
-                        <Text style={styles.cell}>{studentData.phoneNumber}</Text>
-                    </View>
-                    <View style={styles.column}>
-                        <Text style={styles.cell}>{studentData.dateOfAdmission}</Text>
-                    </View>
-                </View>
-
             </Page>
         </Document>
     );
