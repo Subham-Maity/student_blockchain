@@ -5,6 +5,7 @@ import React, {useState} from 'react'
 import {useAuth} from "@/context/AuthContext";
 const Login = () => {
     const {user , login} = useAuth()
+    const router = useRouter()
     const [data, setData] = useState({
         email: '',
         password: '',
@@ -14,7 +15,7 @@ const Login = () => {
         console.log(data)
         try {
             await login(data.email, data.password)
-            // router.push('/dashboard')
+            router.push('/dashboard')
         } catch (err) {
             console.log(err)
         }
