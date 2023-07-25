@@ -15,7 +15,7 @@ const Login = () => {
 
 
     return (
-        <form className="flex max-w-md flex-col gap-4">
+        <form className="flex max-w-md flex-col gap-4" onSubmit={handleLogin}>
             <div>
                 <div className="mb-2 block">
                     <Label
