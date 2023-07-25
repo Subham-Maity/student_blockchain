@@ -9,6 +9,15 @@ import React, {useRef} from "react";
 
 const InputStudent = ({setStudentData, onClose}: Props) => {
     const formRef = useRef<HTMLFormElement>(null);
+    const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const value = event.target.value;
+        // Regular expression to match only alphabets and spaces
+        const regex = /^[A-Za-z\s]+$/;
+        if (!regex.test(value)) {
+            // If the input doesn't match the regex, clear the value
+            event.target.value = "";
+        }
+    };
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -53,6 +62,7 @@ const InputStudent = ({setStudentData, onClose}: Props) => {
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="Student Name"
                         required
+                        onChange={handleNameChange}
                     />
                 </div>
 
@@ -83,7 +93,7 @@ const InputStudent = ({setStudentData, onClose}: Props) => {
                         Student Class
                     </label>
 
-                    <input name="studentClass" type="text" id="studentClass"
+                    <input name="studentClass" type="number" id="studentClass"
                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                            placeholder="Class" required/>
                 </div>
@@ -95,7 +105,7 @@ const InputStudent = ({setStudentData, onClose}: Props) => {
                     </label>
                     <input name="fatherName" type="text" id="fatherName"
                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                           placeholder="Father’s Name" required/>
+                           placeholder="Father’s Name" onChange={handleNameChange} required/>
 
                 </div>
 
