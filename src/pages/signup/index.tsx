@@ -1,9 +1,13 @@
 'use client';
 
 import { Button, Checkbox, Label, TextInput } from 'flowbite-react';
+import {createUserWithEmailAndPassword} from "firebase/auth";
 import {useState} from "react";
+import {useAuth} from "@/context/AuthContext";
 
 const Signup = () => {
+    const {user, signup} = useAuth()
+    console.log(user)
     const [data, setData] = useState({
         email: '',
         password: '',
@@ -13,13 +17,13 @@ const Signup = () => {
 
     const handleSignup = async (e: any) => {
         e.preventDefault()
-        // add a function to check if passwords match and are not empty
-        if (data.password === data.repeatPassword && data.password !== '') {
-            console.log(data)
-            setError('') // clear the error message
-        } else {
-            setError('Passwords do not match or are empty.') // set the error message
+        try {
+            await signup(data.email, data.password)
+        } catch (err) {
+            console.log(err)
         }
+
+        console.log(data)
     }
     return (
         <form className="flex max-w-md flex-col gap-4" onSubmit={handleSignup}>
