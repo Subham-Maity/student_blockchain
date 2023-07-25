@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33639996-211e-41ed-9039-6f67adc0a5cb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/card/inputStudent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/table/studentTable.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PDF/PDFDocument.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/table/studentTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/table/studentTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/dashboard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dashboard/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,29 +20,51 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Subham-Maity"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="05f0037b-8529-4739-adf5-fa76ad18c3fb" />
+        <option name="url" value="https://github.com/Subham-Maity/student_blockchain.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: -1
+}</component>
   <component name="ProjectId" id="2T37c3OBRV23CyaPDr5oivFLHbc" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\maity\\OneDrive\\Github\\O\\MG\\student_blockchain\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Users\\maity\\OneDrive\\Github\\O\\MG\\student_blockchain\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\maity\OneDrive\Github\O\MG\student_blockchain\src" />
@@ -56,7 +79,9 @@
       <option name="presentableId" value="Default" />
       <updated>1690259987168</updated>
       <workItem from="1690259988523" duration="4847000" />
-      <workItem from="1690264926921" duration="13287000" />
+      <workItem from="1690264926921" duration="14235000" />
+      <workItem from="1690280012277" duration="58000" />
+      <workItem from="1690280077460" duration="4613000" />
     </task>
     <servers />
   </component>

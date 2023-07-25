@@ -1,5 +1,10 @@
-'use client'
+// StudentTable.tsx
+
+import React from "react";
 import {MdWarningAmber} from "react-icons/md";
+import {PDFDownloadLink} from "@react-pdf/renderer";
+import PDFDocument from "@/components/PDF/PDFDocument";
+
 
 interface TableProps {
     studentData: {
@@ -15,10 +20,9 @@ interface TableProps {
 }
 
 const StudentTable = ({studentData}: TableProps) => {
-    console.log(studentData)
+    console.log(studentData);
     return (
         <div className="w-full relative overflow-x-auto shadow-md sm:rounded-lg cursor-pointer">
-
             <table
                 className="w-full border-white border-2 text-sm text-left text-gray-500  dark:bg-inherit  dark:text-gray-400">
                 <thead className="text-xs text-gray-400 uppercase dark:bg-gray-700 dark:text-gray-400">
@@ -59,7 +63,6 @@ const StudentTable = ({studentData}: TableProps) => {
                 {studentData.length > 0 && (
                     <>
                         {studentData.map((student: any, index: number) => {
-
                             return (
                                 <tr
                                     key={index}
@@ -77,9 +80,25 @@ const StudentTable = ({studentData}: TableProps) => {
                                     <td className="px-6 py-4">{student.fatherName || ""}</td>
                                     <td className="px-6 py-4">{student.homeAddress || ""}</td>
                                     <td className="px-6 py-4">{student.phoneNumber || ""}</td>
-                                    <td className="px-6 py-4">{student.dateOfAdmission || ""}</td>
+                                    <td className="px-6 py-4">
+                                        {student.dateOfAdmission || ""}
+                                    </td>
+
+                                    {/* Render a PDFDownloadLink for each student */}
+                                    <td className="border px-4 py-2">
+
+                                        <PDFDownloadLink
+                                            document={<PDFDocument studentData={student}/>}
+                                            fileName={`${student.studentName}.pdf`}
+                                        >
+                                            {({blob, url, loading, error}) =>
+                                                loading ? "Loading document..." : "Download PDF"
+                                            }
+                                        </PDFDownloadLink>
+                                    </td>
+
                                 </tr>
-                            )
+                            );
                         })}
                     </>
                 )}
