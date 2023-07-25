@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33639996-211e-41ed-9039-6f67adc0a5cb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/card/inputStudent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/table/studentTable.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.tsx" afterDir="false" />
     </list>
@@ -53,7 +56,7 @@
       <option name="presentableId" value="Default" />
       <updated>1690259987168</updated>
       <workItem from="1690259988523" duration="4847000" />
-      <workItem from="1690264926921" duration="7850000" />
+      <workItem from="1690264926921" duration="13287000" />
     </task>
     <servers />
   </component>
