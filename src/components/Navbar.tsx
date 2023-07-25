@@ -32,12 +32,21 @@ export default function NavbarWithCTAButton() {
                 ) : (
                     <>
                         <Button className="mr-2">
-                            <Link href="/signup" passHref>
+                            <Link href="/signup" passHref
+                                  onClick={() => {
+                                      logout()
+                                      router.push("/signup")
+                                  }}>
                                 Sing In
+
                             </Link>
                         </Button>
                         <Button>
-                            <Link href="/login" passHref>
+                            <Link href="/login" passHref
+                                  onClick={() => {
+                                      logout()
+                                      router.push("/login")
+                                  }}>
                                 login
                             </Link>
                         </Button>
