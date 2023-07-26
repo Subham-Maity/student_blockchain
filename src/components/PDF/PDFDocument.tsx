@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
 });
 
 const PDFDocument: React.FC<PDFDocumentProps> = ({ studentData }) => {
-    const title = "document id - " + uuidv4();
+    const title =  uuidv4();
     return (
         <Document
             title={title}

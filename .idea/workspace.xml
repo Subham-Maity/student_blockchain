@@ -5,21 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33639996-211e-41ed-9039-6f67adc0a5cb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/pdfv1(PDFDocument.tsx).tst" beforeDir="false" afterPath="$PROJECT_DIR$/public/pdfv1(PDFDocument.tsx).tst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/PDF/PDFDocument.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PDF/PDFDocument.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProtectedRoute.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProtectedRoute.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/card/inputStudent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/card/inputStudent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/table/studentTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/table/studentTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/firebase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/firebase.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/AuthContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/AuthContext.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/dashboard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dashboard/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/login/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/signup/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/signup/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +89,7 @@
       <workItem from="1690313847708" duration="2051000" />
       <workItem from="1690315937150" duration="2945000" />
       <workItem from="1690345404998" duration="5515000" />
-      <workItem from="1690352348547" duration="75000" />
+      <workItem from="1690352348547" duration="963000" />
     </task>
     <servers />
   </component>
