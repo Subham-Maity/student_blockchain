@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Page, Text, Document, StyleSheet, View } from "@react-pdf/renderer";
-
+import { v4 as uuidv4 } from "uuid";
 interface PDFDocumentProps {
     studentData: {
         studentName?: string;
@@ -65,8 +65,13 @@ const styles = StyleSheet.create({
 });
 
 const PDFDocument: React.FC<PDFDocumentProps> = ({ studentData }) => {
+    const title = "document id - " + uuidv4();
     return (
-        <Document>
+        <Document
+            title={title}
+            author="Blockchain Student"
+            subject="Blockchain"
+        >
             <Page size="A4" style={styles.page}>
                 <Text style={styles.heading}>Student Details</Text>
                 <View style={styles.table}>
