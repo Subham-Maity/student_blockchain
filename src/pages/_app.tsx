@@ -5,11 +5,12 @@ import { useRouter } from 'next/router'
 import Navbar from "@/components/Navbar";
 import ProtectedRoute from "@/components/ProtectedRoute";
 const noAuthRequired = ['/', '/login', '/signup']
+import "@biconomy/web3-auth/dist/src/style.css"
 
 export default function App({Component, pageProps}: AppProps) {
     const router = useRouter()
     return (<AuthContextProvider>
-        <Navbar/>
+        {/* <Navbar/> */}
         {noAuthRequired.includes(router.pathname) ? (
             <Component {...pageProps} />
         ) : (

@@ -1,64 +1,62 @@
-import React from "react";
-import {MdWarningAmber} from "react-icons/md";
-import {PDFDownloadLink} from "@react-pdf/renderer";
-import PDFDocument from "@/components/PDF/PDFDocument";
+"use client"
+import React , {useState}from "react";
 
+import PDFGenerator from '@/components/PDF/pdfGenerator'
+import { useAuth } from "@/context/AuthContext"
+import Student from "@/types/students";
 
-interface TableProps {
-    studentData: {
-        studentName?: string;
-        studentAge?: string;
-        studentDOB?: string;
-        studentClass?: string;
-        fatherName?: string;
-        homeAddress?: string;
-        phoneNumber?: string;
-        dateOfAdmission?: string;
-    }[];
-}
-
-const StudentTable = ({studentData}: TableProps) => {
-    console.log(studentData);
+const StudentTable = ({studentData}: {studentData:Student[]}) => {
+    // console.log(studentData);
+    const {downloadData,showPdf,setShowPdf}=useAuth();
+    const [data,setData]=useState<Student>();
+    const handlePdf=(data:Student)=>{
+            setData(data);
+            setShowPdf(true);
+    }
     return (
-        <div className="w-full relative overflow-x-auto shadow-md sm:rounded-lg cursor-pointer">
+        <>
+        {showPdf && (
+            <>
+            <div className="fixed top-0 left-0 right-0 bottom-0 z-10 bg-gray-800 bg-opacity-50 flex items-center justify-center">
+               {data &&  <PDFGenerator data={data} />}
+        </div>
+            </>
+        )}
+        <div className="w-full custom-scrollbar h-fit relative overflow-x-auto overflow-y-auto shadow-md sm:rounded-lg ">
             <table
                 className="w-full border-white border-2 text-sm text-left text-gray-500  dark:bg-inherit  dark:text-gray-400">
                 <thead className="text-xs text-gray-400 uppercase dark:bg-gray-700 dark:text-gray-400">
                 <tr>
-                    <th scope="col" className="px-6 py-3">
+                    <th scope="col" className="text-white bg-blue-900 px-6 py-3  ">
+                        Serial No.
+                    </th>
+                    <th scope="col" className="text-white bg-blue-900 px-6 py-3 ">
                         Student Name
                     </th>
-                    <th scope="col" className="px-6 py-3">
+                    <th scope="col" className="text-white bg-blue-900 px-6 py-3 ">
                         Age
                     </th>
-                    <th scope="col" className="px-6 py-3">
+                    <th scope="col" className="text-white bg-blue-900 px-6 py-3 ">
                         Date of Birth
                     </th>
-                    <th scope="col" className="px-6 py-3">
-                        Class in which the student wants to take admission
+                    <th scope="col" className="text-white bg-blue-900 px-6 py-3 ">
+                        Applied Course
                     </th>
-                    <th scope="col" className="px-6 py-3">
-                        Father’s name
+                    <th scope="col" className="text-white bg-blue-900 px-6 py-3 ">
+                        Grade
                     </th>
-                    <th scope="col" className="px-6 py-3">
-                        Home address
+                    <th scope="col" className="text-white bg-blue-900 px-6 py-3 ">
+                        Father Name
                     </th>
-                    <th scope="col" className="px-6 py-3">
-                        Phone number and other contact details
+                    <th scope="col" className="text-white bg-blue-900 px-6 py-3 ">
+                        Action
                     </th>
-                    <th scope="col" className="px-6 py-3">
-                        Date of admission
-                    </th>
+                   
                 </tr>
                 </thead>
                 <tbody className="rounded-xl">
-                {studentData.length === 0 && (
-                    <tr className="light:bg-white border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <MdWarningAmber
-                            className="text-4xl text-gray-400 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"/>
-                    </tr>
-                )}
-                {studentData.length > 0 && (
+                
+                {studentData?.length > 0 && (
                     <>
                         {studentData.map((student: any, index: number) => {
                             return (
@@ -66,24 +64,31 @@ const StudentTable = ({studentData}: TableProps) => {
                                     key={index}
                                     className="light:bg-white border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
                                 >
-                                    <th
-                                        scope="row"
-                                        className="px-6 py-4 font-medium text-gray-500 whitespace-nowrap dark:text-white"
-                                    >
-                                        {student.studentName || ""}
-                                    </th>
+                                     <td className="px-6 py-4">{student.serialNumber || ""}</td>
+                                     <td className="px-6 py-4">{student.studentName || ""}</td>
+
                                     <td className="px-6 py-4">{student.studentAge || ""}</td>
                                     <td className="px-6 py-4">{student.studentDOB || ""}</td>
-                                    <td className="px-6 py-4">{student.studentClass || ""}</td>
+                                    <td className="px-6 py-4">{student.studentCourse || ""}</td>
+                                    <td className="px-6 py-4">{student.studentGrade || ""}</td>
                                     <td className="px-6 py-4">{student.fatherName || ""}</td>
-                                    <td className="px-6 py-4">{student.homeAddress || ""}</td>
-                                    <td className="px-6 py-4">{student.phoneNumber || ""}</td>
                                     <td className="px-6 py-4">
-                                        {student.dateOfAdmission || ""}
+                                        <button onClick={()=>handlePdf(student)}>
+                                            View Pdf
+                                        </button>
+                                        {/* <button
+                                        onClick={()=>downloadData(student.uuid)}
+                                        >
+                                            download pdf
+                                        </button> */}
                                     </td>
+                           
+                                    
+
+
 
                                     {/* Render a PDFDownloadLink for each student */}
-                                    <td className="border px-4 py-2">
+                                    {/* <td className="px-6 py-4">
 
                                         <PDFDownloadLink
                                             document={<PDFDocument studentData={student}/>}
@@ -93,7 +98,7 @@ const StudentTable = ({studentData}: TableProps) => {
                                                 loading ? "Loading document..." : "Download PDF"
                                             }
                                         </PDFDownloadLink>
-                                    </td>
+                                    </td> */}
 
                                 </tr>
                             );
@@ -103,6 +108,7 @@ const StudentTable = ({studentData}: TableProps) => {
                 </tbody>
             </table>
         </div>
+        </>
     );
 };
 

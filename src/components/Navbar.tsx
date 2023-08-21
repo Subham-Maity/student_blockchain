@@ -1,84 +1,55 @@
-'use client';
-import {Button, Navbar} from 'flowbite-react';
-import Link from 'next/link';
-import {useRouter} from 'next/router'
-import React, {useState} from 'react'
-import {useAuth} from "@/context/AuthContext";
+"use client";
+import { useRef } from 'react';
+import ClipboardJS from 'clipboard';
+import { useRouter } from "next/router";
+import React, { useState } from "react";
+import { useAuth } from "@/context/AuthContext";
+import CopyToClipboardButton from './ClickBoard';
+import SocialLogin from "@biconomy/web3-auth"
 
 export default function NavbarWithCTAButton() {
-    const {user, logout} = useAuth()
-    const router = useRouter()
-    return (
-        <Navbar
-            fluid
-            rounded
-        >
+  const { user } = useAuth();
+  const router = useRouter();
+  // const sdkRef = useRef<SocialLogin | null>(null)
+  const {setSmartAccount,smartAccount}=   useAuth();
 
-            <Navbar.Brand>
-                <Link href="/dashboard" passHref>
-                    <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Student Blockchain</span>
-                </Link>
-            </Navbar.Brand>
-            <div className="flex md:order-2">
-                {user ? (
-                    <Button className="mr-2">
-                        <Link href="/login" onClick={() => {
-                            logout()
-                            router.push("/login")
-                        }}>
-                            Log out
-                        </Link>
-                    </Button>
-                ) : (
-                    <>
-                        <Button className="mr-2">
-                            <Link href="/signup" passHref
-                                  onClick={() => {
-                                      logout()
-                                      router.push("/signup")
-                                  }}>
-                                Sing In
 
-                            </Link>
-                        </Button>
-                        <Button>
-                            <Link href="/login" passHref
-                                  onClick={() => {
-                                      logout()
-                                      router.push("/login")
-                                  }}>
-                                login
-                            </Link>
-                        </Button>
-                    </>
-                )}
-                <Navbar.Toggle/>
-            </div>
-
-            {/*<Navbar.Collapse>*/}
-            {/*    <Navbar.Link*/}
-            {/*        active*/}
-            {/*        href="#"*/}
-            {/*    >*/}
-            {/*        <p>*/}
-            {/*            Home*/}
-            {/*        </p>*/}
-            {/*    </Navbar.Link>*/}
-            {/*    <Navbar.Link href="#">*/}
-            {/*        About*/}
-            {/*    </Navbar.Link>*/}
-            {/*    <Navbar.Link href="#">*/}
-            {/*        Services*/}
-            {/*    </Navbar.Link>*/}
-            {/*    <Navbar.Link href="#">*/}
-            {/*        Pricing*/}
-            {/*    </Navbar.Link>*/}
-            {/*    <Navbar.Link href="#">*/}
-            {/*        Contact*/}
-            {/*    </Navbar.Link>*/}
-            {/*</Navbar.Collapse>*/}
-        </Navbar>
-    )
+  const handleLogout=()=>{
+    setSmartAccount(null)
+  }
+  
+  return (
+    <nav className="w-full h-[5.4rem] shadow-lg p-1 py-2 flex items-center justify-between border-b-2">
+      <div>
+        <img className="w-[14rem]" src="/Logo.png" alt="" />
+      </div>
+      <div className="flex gap-[2rem] items-center mr-[4rem] ">
+        <div  className="rounded-mg bg-slate-100  border-blue-800 border-2 py-2 px-4 rounded">
+          {/* <p className="flex justify-center cursor-pointer ">
+            Lbcfr...
+            <span className="ml-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill={isCopied ?"#7bed9f":"none"}
+                viewBox="0 0 24 24"
+                strokeWidth={1.6}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0118 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3l1.5 1.5 3-3.75"
+                />
+              </svg>
+            </span>
+          </p> */}
+          <CopyToClipboardButton textToCopy={smartAccount?.address} />
+        </div>
+        <button onClick={handleLogout} className="bg-blue-800 hover:bg-blue-600  text-white font-semibold py-2 px-7 rounded focus:outline-none focus:shadow-outline">
+          Logout
+        </button>
+      </div>
+    </nav>
+  );
 }
-
-

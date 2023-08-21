@@ -3,16 +3,17 @@ import React, { useEffect } from 'react'
 import { useAuth } from '@/context/AuthContext'
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
-    const { user } = useAuth()
+    const { smartAccount } = useAuth()
     const router = useRouter()
 
     useEffect(() => {
-        if (!user) {
-            router.push('/login')
+        if (!smartAccount) {
+            console.log("smart Account from protected", smartAccount);
+            router.push('/')
         }
-    }, [router, user])
+    }, [smartAccount])
 
-    return <>{user ? children : null}</>
+    return <>{children}</>
 }
 
 export default ProtectedRoute

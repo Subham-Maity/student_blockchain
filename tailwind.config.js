@@ -13,6 +13,11 @@ module.exports = {
         'gradient-conic':
             'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      fontFamily: {
+        font1: ['Cinzel', 'serif'],
+        font2:['Cinzel Decorative','cursive']
+         // Replace FontName with your font's name
+      },
     },
   },
   plugins: [require('flowbite/plugin')],
